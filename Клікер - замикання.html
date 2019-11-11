@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+        <h1>"Натисни на ккнопку, отримаєш результат..."</h1>
+        <div class="disp"><input disabled type="text" class="displayBtn" id="display"></div>
+        <div class="btns">
+            <button onclick="makeCounter()" class="button1">Тисни!</button>
+        </div>
+<SCRIPT language=Javascript>
+
+ let num = 0;
+
+ function makeCounter() {
+    counter();
+    document.getElementById('display').value = (num);
+    function counter() {
+         num++;
+     }
+ }
+
+</SCRIPT>
+</body>
+</html>

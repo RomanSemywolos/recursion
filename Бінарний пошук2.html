@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+
+    <div class="random_2">
+        <h1>Я можу знайти!</h1>
+        <div class="inputs">
+            <input type="text" placeholder="від" id="min" class="input" >
+            <input type="text" placeholder="до"  id="max" class="input" >
+        </div>
+        <div class="inputs">
+            <input type="text" placeholder="Порядковий номер?" id="num" class="input" >
+        </div>
+        <div class="disp"><input disabled type="text" class="displayBtn" id="display"></div>
+        <div class="btns">
+            <button onclick="add()" class="button1">Знайти!</button>
+        </div>
+    </div>
+
+
+<SCRIPT language=Javascript>
+
+        function add() {
+            let x = parseInt(document.getElementById('num').value);
+            let arr = [];
+            let min = parseInt(document.getElementById('min').value);
+            let max = parseInt(document.getElementById('max').value);
+            for (arr = [], j = min; j <= max; j++) arr.push (j);
+            if (x >= min && x <= max) {
+                let start = new Date();
+                binarySearch(x, arr);
+                let end = new Date();
+                console.log('Операція пройшла за ' + (end.getTime() - start.getTime()) + ' мсек');
+            }
+            else document.getElementById('display').value = ("Тут такого немає");
+
+            function binarySearch(x, arr) {
+                console.log(arr);
+                let search = Math.floor(arr.length / 2);
+                console.log(search);
+                if(x == arr[search]){
+                    document.getElementById('display').value = (arr[search]);
+                    return arr[search];
+                }
+                if(arr[search] < x){
+                    return binarySearch(x, arr.slice(search))
+                }
+
+                if(arr[search] > x){
+                    return binarySearch(x, arr.slice(0, search))
+                }
+            }
+        }
+</SCRIPT>
+</body>
+</html>

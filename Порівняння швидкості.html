@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+<div class="random">
+    <div class="random_2">
+        <h1>"Натисни на ккнопку, отримаєш результат..."</h1>
+        <div class="disp"><input disabled type="text" class="displayBtn" id="display"></div>
+        <div class="btns">
+            <button onclick="makeCounter()" class="button1">Тисни!и</button>
+        </div>
+    </div>
+</div>
+recursivelyBtn.addEventListener('click', function () {
+recursivelyDisplay.innerHTML = count();
+});
+let count = makeCounter();
+function makeCounter() {
+function counter() {
+console.log(counter.currentCount)
+return counter.currentCount++;
+};
+
+counter.currentCount = 1;
+
+return counter;
+}
+<SCRIPT language=Javascript>
+    
+</SCRIPT>
+</body>
+</html>

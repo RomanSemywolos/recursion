@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Title</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body>
+    <div id="block">
+      <div id="line">
+        <div id="Inform">
+          В бинарном дереве поиска случайные числа с диапазона [-100;100]
+        </div>
+        <span id="Inform">BinaryTree</span>
+        <input type="text" id="size" placeholder="Элементов в массиве" />
+        <input type="text" id="value" placeholder="Значение для поиска" />
+        <button id="search">Сгенерировать и Найти</button>
+      </div>
+      <div id="result"></div>
+      <button id="reset">Очистить</button>
+      <div id="text"></div>
+    </div>
+    <div id="block">
+      <div id="line">
+        <div id="Inform">B LinkedList элементы с диапазона [-100;100]</div>
+        <span id="Inform">LinkedList</span>
+        <input type="text" id="size_ll" placeholder="Количество элементов" />
+        <button id="gener">Сгенерировать</button>
+      </div>
+      <button id="reset_ll">Очистить</button>
+      <div id="text_ll"></div>
+    </div>
+    <script src="LinkedList/Interface.js"></script>
+    <script src="LinkedList/PrototypeExtand.js"></script>
+    <script src="model.js"></script>
+    <script src="BinaryTree.js"></script>
+    <script src="controller.js"></script>
+  </body>
+</html>

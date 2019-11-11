@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+    <div class="random_2">
+        <h1>Я можу знайти!</h1>
+        <div class="inputs">
+            <input type="text" placeholder="від" id="min" class="input" >
+            <input type="text" placeholder="до"  id="max" class="input" >
+        </div>
+        <div class="inputs">
+            <input type="text" placeholder="Порядковий номер?" id="num" class="input" >
+        </div>
+        <div class="disp"><input disabled type="text" class="displayBtn" id="display"></div>
+        <div class="btns">
+            <button onclick="binarySearch ()" class="button1">Знайти!</button>
+        </div>
+    </div>
+
+<SCRIPT language=Javascript>
+    function binarySearch (x, arr) {
+        x = parseInt(document.getElementById('num').value);
+        let min = parseInt(document.getElementById('min').value);
+        let max = parseInt(document.getElementById('max').value);
+        for (arr = [], j = min; j <= max; j++) arr.push (j);
+        console.log (arr);
+        if (x >= min && x <= max) {
+            let start = new Date();
+            binarySearch2(min, max);
+            let end = new Date();
+            console.log('Операція пройшла за ' + (end.getTime() - start.getTime()) + ' мсек');
+        }
+        else document.getElementById('display').value = ("Тут такого немає");
+
+        function binarySearch2(low,high) {
+            if (low > high || (low === high && low !== x))
+                return -1;
+            let mid = Math.floor((low + high) / 2);
+            console.log (low);
+            console.log (high);
+
+            if (x === mid){
+                document.getElementById('display').value = (mid);
+                return mid;
+            }
+            else if (x < mid)
+                return binarySearch2(low,mid-1);
+            else
+                return binarySearch2(mid+1, high);
+        }
+    }
+</SCRIPT>
+</body>
+</html>

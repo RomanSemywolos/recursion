@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+<div class="random">
+    <div class="random_1">
+
+    </div>
+    <div class="random_2">
+        <h1>Визначити число з послідовності Фібоначчі (0,1,1,2,3,5,8,13,21,34...)</h1>
+        <div class="inputs">
+            <input type="text" placeholder="Порядковий номер числа?" id="num" class="input" >
+        </div>
+        <div class="disp"><input disabled type="text" class="displayBtn" id="display"></div>
+        <div class="btns">
+            <button onclick="fibonacci()" class="button1">Визначити</button>
+        </div>
+    </div>
+</div>
+</head>
+
+<SCRIPT language=Javascript>
+    let int1 = 1;
+    let int2 = 0;
+    let int = 1;
+    function fibonacci (){
+        let num = parseInt(document.getElementById('num').value);
+        if (int <= num){
+            int2 = int1 + int2;
+            int1 = int2 - int1;
+            fibonacci (int++, int1, int2);
+        }
+        else {
+            document.getElementById('display').value = (int1);
+            int1 = 1;
+            int2 = 0;
+            int = 1;
+            num = 0;
+        }
+    }
+</SCRIPT>
+</body>
+</html>

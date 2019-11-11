@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+<div class="random">
+    <div class="random_1">
+
+    </div>
+    <div class="random_2">
+        <h1>Обрахувати факторіал безкоштовно, без реєстрації та sms</h1>
+        <div class="inputs">
+            <input type="text" placeholder="факторіал якого числа?" id="num" class="input" >
+        </div>
+        <div class="disp"><input disabled type="text" class="displayBtn" id="display"></div>
+        <div class="btns">
+            <button onclick="factorial()" class="button1">Обрахувати</button>
+        </div>
+    </div>
+</div>
+</head>
+
+<SCRIPT language=Javascript>
+    let int2 = 1;
+    int = 1;
+    function factorial (){
+        let num = parseInt(document.getElementById('num').value);
+            if (int <= num){
+                    int2 = int2 * int;
+                    factorial (int++);
+            }
+            else {
+                document.getElementById('display').value = (int2);
+                int2 = 1;
+                int = 1;
+                num = 0;
+            }
+    }
+</SCRIPT>
+</body>
+</html>
